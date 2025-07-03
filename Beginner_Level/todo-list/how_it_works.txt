@@ -1,0 +1,52 @@
+           ┌────────────────┐
+           │   main.cpp     │
+           │ (your main app)│
+           └──────┬─────────┘
+                  │
+        #include "todo.h"
+                  │
+                  ▼
+        ┌─────────────────┐
+        │   todo.h        │
+        │ (class + method │
+        │  declarations)  │
+        └──────┬──────────┘
+               │
+       Used by compiler to know:
+       - class ToDoList exists
+       - what methods it has
+               │
+               ▼
+        ┌────────────────────┐
+        │    todo.cpp        │
+        │ (method definitions│
+        │  of ToDoList class)│
+        └────────────────────┘
+
+
+
+--The compiler sees main.cpp, finds #include "todo.h"
+
+--It learns the structure of the ToDoList class from todo.h
+
+--Then it compiles the actual logic from todo.cpp
+
+--Finally, everything is linked together into a single executable: todo
+
+Note: 
+
+| File       | Purpose                            |
+| ---------- | ---------------------------------- |
+| `todo.h`   | Declares the class and its methods | 
+| `todo.cpp` | Defines how those methods work     |
+| `main.cpp` | Uses the class to run your program |
+
+
+--In C++, a file with the .h extension is a header file. It’s used to declare (not define) things like:
+Classes, Functions, Constants, Structures, Macros
+
+| File       | Role                                                            |
+| ---------- | --------------------------------------------------------------- |
+| `todo.h`   | Blueprint – says "I have a class ToDoList with these functions" |
+| `todo.cpp` | Builder – actually builds those functions                       |
+
